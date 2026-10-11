@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#274a39" />
+    <title>Snake and Ladder</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="page-header">
+        <h1>Snake <span>&</span> Ladder</h1>
+      </header>
+
+      <section class="game-layout" aria-label="Snake and Ladder game">
+        <div class="board-panel">
+          <div id="board" aria-label="Game board"></div>
+        </div>
+
+        <aside class="game-panel" aria-label="Game controls and players">
+          <section class="turn-card" id="turn-card" aria-live="polite">
+            <div class="turn-orb" id="turn-orb">1</div>
+            <div class="turn-copy">
+              <span class="panel-label">CURRENT TURN</span>
+              <h2 id="turn-title">Player 1</h2>
+              <p id="turn-hint">Roll the dice to get moving.</p>
+            </div>
+            <span class="turn-pulse" aria-hidden="true"></span>
+          </section>
+
+          <section class="dice-card" aria-label="Dice">
+            <div>
+              <span class="panel-label">YOUR ROLL</span>
+              <p id="dice-caption">Ready when you are</p>
+            </div>
+            <div id="dice" class="die" aria-label="No roll yet">–</div>
+          </section>
+
+          <button id="roll-btn" class="primary-button" type="button">
+            <span class="button-icon" aria-hidden="true">⚄</span>
+            <span>Roll dice</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <div class="setup-row">
+            <label for="player-count">Players</label>
+            <select id="player-count">
+              <option value="1">1 player</option>
+              <option value="2" selected>2 players</option>
+              <option value="3">3 players</option>
+              <option value="4">4 players</option>
+            </select>
+            <button id="new-game-btn" class="quiet-button" type="button">
+              New game
+            </button>
+          </div>
+
+          <section class="players-section">
+            <div class="section-heading">
+              <h2>Players</h2>
+            </div>
+            <div id="players" class="players-list"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <div
+      id="celebration"
+      class="celebration hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="winner-title"
+    >
+      <div class="celebration-backdrop"></div>
+      <div class="confetti-field" id="confetti-field" aria-hidden="true"></div>
+      <section class="winner-card">
+        <div class="trophy" aria-hidden="true">🏆</div>
+        <span class="panel-label">GAME COMPLETE</span>
+        <h2 id="winner-title">Player 1 wins!</h2>
+        <p id="winner-copy">A perfect run to the top.</p>
+        <div class="winner-score" id="winner-score"></div>
+        <button id="play-again-btn" class="primary-button" type="button">
+          <span>Play again</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+        <button id="close-celebration-btn" class="text-button" type="button">
+          Back to the board
+        </button>
+      </section>
+    </div>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
