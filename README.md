@@ -1,5 +1,7 @@
 # Snake and Ladder
 
+play it [here](https://khushnaseiba.github.io/snake-and-ladder/)
+
 A small Snake and Ladder game.
 
 - 1 to 4 players.
@@ -16,8 +18,8 @@ A small Snake and Ladder game.
 ## Build and run
 
 ```
-./build.sh
+wasm-pack build -t web --out-dir web/pkg
 python3 -m http.server -d web 8000
 ```
 
-and open http://localhost:8000.
+and open [http://localhost:8000](http://localhost:8000).
